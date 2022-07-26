@@ -1,3 +1,10 @@
+/* #region Root */
+:root {
+    --carousel-height: 350px;
+}
+
+/* #endregion Root */
+
 /* #region Regole Reset */
 * {
     box-sizing: border-box;
@@ -12,7 +19,7 @@ ul {
 .slide img {
     display: block;
     width: 100%;
-    height: 350px;
+    height: var(--carousel-height);
     object-fit: cover;
     object-position: center;
 }
@@ -29,7 +36,7 @@ ul {
 
 /* #region Utilities */
 .slide.active {
-    display: block;
+    opacity: 1;
 }
 
 /* #endregion Utilities */
@@ -39,9 +46,19 @@ ul {
     position: relative;
 }
 
-.slide {
-    display: none;
+.slides-wrapper {
     position: relative;
+    height: var(--carousel-height);
+}
+
+.slide {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 300ms linear;
 }
 
 .slide:before {
