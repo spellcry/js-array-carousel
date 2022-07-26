@@ -55,6 +55,10 @@ ul {
     transition: background-color 150ms linear;
 }
 
+.slider:hover .slide:before {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 /* #endregion Slider */
 
 /* #region Arrows */
@@ -74,10 +78,6 @@ ul {
 
 .slider:hover .arrows {
     color: rgba(255, 140, 0, 1);
-}
-
-.slider:hover .slide:before {
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* #endregion Arrows */
