@@ -110,22 +110,24 @@ prevArrowEl.addEventListener('click', function() {
 
 dotsEl.addEventListener('click', function(){
     let dotEl = dotsEl.querySelector(':hover');
-    let index = 0;
-    // trovo l'index dell'elemento
-    while( (dotEl = dotEl.previousSibling) != null ) {
-        index++;
-    }
-    // prendo la slide corrente e la prossima da visualizzare
-    const activeSlideEl = document.querySelector('.active');
-    const nextActiveSlideEl = slidesWrapperEl.childNodes[index];
+    if ( dotEl != null ) {
+        let index = 0;
+        // trovo l'index dell'elemento
+        while( (dotEl = dotEl.previousSibling) != null ) {
+            index++;
+        }
+        // prendo la slide corrente e la prossima da visualizzare
+        const activeSlideEl = document.querySelector('.active');
+        const nextActiveSlideEl = slidesWrapperEl.childNodes[index];
+        
+        activeSlideEl.classList.remove('active');
+        nextActiveSlideEl.classList.add('active');
     
-    activeSlideEl.classList.remove('active');
-    nextActiveSlideEl.classList.add('active');
-
-    // prendo il dot corrente e il prossimo attivo
-    const activeDotEl = dotsEl.querySelector('.active');
-    const nextActiveDotEl = dotsEl.childNodes[index];
-
-    activeDotEl.classList.remove('active');
-    nextActiveDotEl.classList.add('active');
+        // prendo il dot corrente e il prossimo attivo
+        const activeDotEl = dotsEl.querySelector('.active');
+        const nextActiveDotEl = dotsEl.childNodes[index];
+    
+        activeDotEl.classList.remove('active');
+        nextActiveDotEl.classList.add('active');
+    }
 });
