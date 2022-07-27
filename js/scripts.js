@@ -24,11 +24,11 @@ for ( let i = 0; i < slides.length; i++ ) {
     }
 
     // creando img
-    const img = document.createElement('img');
-    img.src = src;
+    const imgEl = document.createElement('img');
+    imgEl.src = src;
 
     // inseriamo img dentro li
-    liEl.append(img);
+    liEl.append(imgEl);
 
     // inseriamo li dentro la lista 'slidesWrapperEl'
     slidesWrapperEl.append(liEl);
